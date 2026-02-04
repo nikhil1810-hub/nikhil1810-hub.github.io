@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>WebForge — Web Design Studio</title>
 
+<!-- FAVICON -->
+<link rel="icon" type="image/png" href="logo.png">
+
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
@@ -37,11 +40,8 @@ body{
   z-index:3000;
   transition:opacity .8s ease;
 }
-.loader span{
-  font-family:"Playfair Display",serif;
-  font-size:2rem;
-  letter-spacing:.4em;
-  color:var(--accent);
+.loader img{
+  width:90px;
   animation:pulse 1.8s infinite;
 }
 @keyframes pulse{
@@ -64,6 +64,7 @@ nav{
   border-bottom:1px solid var(--line);
   z-index:1000;
 }
+nav img{width:42px}
 nav a{
   color:var(--muted);
   text-decoration:none;
@@ -137,7 +138,7 @@ section{
 .btn:hover::after{transform:translateX(0)}
 .btn:hover{color:#000}
 
-/* TEXT */
+/* STATEMENT */
 .statement{
   font-family:"Playfair Display",serif;
   font-size:2.6rem;
@@ -167,11 +168,9 @@ section{
   margin-bottom:16px;
 }
 
-/* PRICING DETAILS */
+/* PRICING LIST */
 .price-list{
   list-style:none;
-  padding:0;
-  margin:0;
 }
 .price-list li{
   color:var(--muted);
@@ -184,6 +183,20 @@ section{
   font-size:.7rem;
   letter-spacing:.12em;
   color:var(--accent);
+}
+
+/* NEED HELP */
+.need-help{
+  text-align:center;
+  border-top:1px solid var(--line);
+}
+.need-help h2{
+  font-family:"Playfair Display",serif;
+  font-size:2.4rem;
+}
+.need-help p{
+  color:var(--muted);
+  margin-top:20px;
 }
 
 /* FLOAT BUTTONS */
@@ -216,19 +229,7 @@ section{
   transform:translateY(-4px);
 }
 
-/* ANIMATIONS */
-.reveal{
-  opacity:0;
-  transform:translateY(42px);
-  animation:reveal 1.2s cubic-bezier(.2,.8,.2,1) forwards;
-}
-.reveal-delay-1{animation-delay:.15s}
-.reveal-delay-2{animation-delay:.3s}
-
-@keyframes reveal{
-  to{opacity:1;transform:translateY(0)}
-}
-
+/* ANIMATION */
 .fade-up{
   opacity:0;
   transform:translateY(32px);
@@ -249,20 +250,10 @@ footer{
 
 /* MOBILE */
 @media(max-width:768px){
-  section{
-    padding:120px 20px;
-    min-height:auto;
-  }
-  .hero{
-    grid-template-columns:1fr;
-    gap:48px;
-  }
-  .hero h1{
-    font-size:2.8rem;
-  }
-  .statement{
-    font-size:1.8rem;
-  }
+  section{padding:120px 20px;min-height:auto}
+  .hero{grid-template-columns:1fr;gap:48px}
+  .hero h1{font-size:2.8rem}
+  .statement{font-size:1.8rem}
 }
 </style>
 </head>
@@ -271,12 +262,12 @@ footer{
 
 <!-- LOADER -->
 <div class="loader" id="loader">
-  <span>WEBFORGE</span>
+  <img src="logo.png" alt="WebForge Logo">
 </div>
 
 <!-- NAV -->
 <nav>
-  <strong style="letter-spacing:.25em">WEBFORGE</strong>
+  <img src="logo.png" alt="WebForge Logo">
   <div>
     <a href="#home">HOME</a>
     <a href="#about">ABOUT</a>
@@ -290,103 +281,62 @@ footer{
 <!-- HOME -->
 <section id="home" class="hero">
   <div>
-    <h1 class="reveal">
-      Web design that<br><span>earns trust.</span>
-    </h1>
-    <p class="reveal reveal-delay-1">
-      WebForge crafts thoughtfully designed websites that project credibility,
-      confidence, and quiet authority—so businesses are chosen with certainty.
+    <h1 class="fade-up">Web design that<br><span>earns trust.</span></h1>
+    <p class="fade-up">
+      I build fast, mobile-friendly websites that convert visitors into clients.
+      <br>Web design • Landing pages • Business websites
     </p>
-    <a class="btn reveal reveal-delay-2" href="#contact">
-      START YOUR PROJECT
-    </a>
+    <a class="btn fade-up" href="#contact">START YOUR PROJECT</a>
   </div>
 </section>
 
+<!-- STATEMENT -->
 <section class="statement fade-up">
   Your website should justify your price before you ever speak.
 </section>
 
-<!-- ABOUT / INTRO -->
+<!-- ABOUT -->
 <section id="about">
-  <h2 class="fade-up" style="font-family:Playfair Display;font-size:3.2rem;margin-bottom:80px">
-    About
-  </h2>
-
+  <h2 class="fade-up" style="font-family:Playfair Display;font-size:3.2rem;margin-bottom:80px">About</h2>
   <div class="grid">
     <div class="fade-up">
-      <p style="font-size:1.15rem;line-height:1.6;color:var(--muted);max-width:560px">
-        I’m NIKHIL RAMGIRWAR founder of <span style="color:var(--ink)">WebForge</span>, a design studio
-        focused on building calm, credible, and conversion-driven websites.
-        <br><br>
-        I work with founders and businesses that value clarity, quality,
-        and long-term brand perception. Every project begins with strategy,
-        not templates.
-        <br><br>
-        The goal isn’t decoration — it’s to make your business feel
-        established, trustworthy, and worth choosing.
+      <p style="font-size:1.15rem;line-height:1.6;color:var(--muted)">
+        I’m Nikhil Ramgirwar, founder of WebForge — focused on calm, credible,
+        conversion-driven websites built with strategy, not templates.
       </p>
     </div>
-
     <div class="fade-up">
-      <div class="card">
-        <h3>What I focus on</h3>
-        <p>Clear hierarchy, refined UI, subtle motion, and trust-first layouts.</p>
-      </div>
-
-      <div class="card" style="margin-top:32px">
-        <h3>Who I work with</h3>
-        <p>Professionals, founders, and growing businesses who value seriousness.</p>
-      </div>
-
-      <div class="card" style="margin-top:32px">
-        <h3>How I work</h3>
-        <p>Limited projects, direct communication, and attention to detail.</p>
-      </div>
+      <div class="card"><h3>What I focus on</h3><p>Clarity, trust & refined UI.</p></div>
+      <div class="card" style="margin-top:32px"><h3>Who I work with</h3><p>Serious founders & businesses.</p></div>
+      <div class="card" style="margin-top:32px"><h3>How I work</h3><p>Direct, focused, detail-driven.</p></div>
     </div>
   </div>
 </section>
 
 <!-- SERVICES -->
 <section id="services">
-  <h2 class="fade-up" style="font-family:Playfair Display;font-size:3.2rem;margin-bottom:80px">
-    Services
-  </h2>
+  <h2 class="fade-up" style="font-family:Playfair Display;font-size:3.2rem;margin-bottom:80px">Services</h2>
   <div class="grid">
-    <div class="card fade-up">
-      <h3>Business Websites</h3>
-      <p>Trust-first websites designed to convert visitors into enquiries.</p>
-    </div>
-    <div class="card fade-up">
-      <h3>Brand Websites</h3>
-      <p>High-end digital presence for authority and positioning.</p>
-    </div>
-    <div class="card fade-up">
-      <h3>Website Redesign</h3>
-      <p>Transform outdated sites into credibility assets.</p>
-    </div>
+    <div class="card fade-up"><h3>Business Websites</h3><p>Trust-first conversion design.</p></div>
+    <div class="card fade-up"><h3>Brand Websites</h3><p>Authority & positioning.</p></div>
+    <div class="card fade-up"><h3>Website Redesign</h3><p>Modern credibility rebuild.</p></div>
   </div>
 </section>
 
 <!-- PROCESS -->
 <section id="process">
-  <h2 class="fade-up" style="font-family:Playfair Display;font-size:3.2rem;margin-bottom:80px">
-    Process
-  </h2>
+  <h2 class="fade-up" style="font-family:Playfair Display;font-size:3.2rem;margin-bottom:80px">Process</h2>
   <div class="grid">
-    <div class="card fade-up"><h3>Discovery</h3><p>Understanding your business and audience.</p></div>
-    <div class="card fade-up"><h3>Strategy</h3><p>Structuring content for trust and flow.</p></div>
-    <div class="card fade-up"><h3>Design</h3><p>Refined UI with premium motion.</p></div>
-    <div class="card fade-up"><h3>Build & Launch</h3><p>Fast, clean, and reliable execution.</p></div>
+    <div class="card fade-up"><h3>Discovery</h3><p>Understand goals.</p></div>
+    <div class="card fade-up"><h3>Strategy</h3><p>Structure & flow.</p></div>
+    <div class="card fade-up"><h3>Design</h3><p>Premium UI.</p></div>
+    <div class="card fade-up"><h3>Build & Launch</h3><p>Fast execution.</p></div>
   </div>
 </section>
 
 <!-- PRICING -->
 <section id="pricing">
-  <h2 class="fade-up" style="font-family:Playfair Display;font-size:3.2rem;margin-bottom:80px">
-    Pricing
-  </h2>
-
+  <h2 class="fade-up" style="font-family:Playfair Display;font-size:3.2rem;margin-bottom:80px">Pricing</h2>
   <div class="grid">
     <div class="card fade-up">
       <h3>Starter Website</h3>
@@ -425,6 +375,15 @@ footer{
   </div>
 </section>
 
+<!-- NEED HELP -->
+<section class="need-help fade-up">
+  <h2>Need help choosing the right plan?</h2>
+  <p>Chat with me directly on WhatsApp — no pressure.</p>
+  <a class="btn"
+     href="https://wa.me/917558721132?text=Hi%20Nikhil,%20I%20need%20help%20choosing%20a%20website%20plan."
+     target="_blank">CHAT ON WHATSAPP</a>
+</section>
+
 <!-- CONTACT -->
 <section id="contact" class="statement fade-up">
   Ready to look like a serious business?
@@ -442,7 +401,7 @@ footer{
 <div class="float-wrap">
   <a href="tel:+917558721132" class="float-btn">📞</a>
   <a href="https://wa.me/917558721132" target="_blank" class="float-btn">💬</a>
-  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=nikhilramgirwar20@gmail.com" target="_blank" class="float-btn">✉️</a>
+  <a href="mailto:nikhilramgirwar20@gmail.com" class="float-btn">✉️</a>
 </div>
 
 <script>
